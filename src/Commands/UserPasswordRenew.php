@@ -46,7 +46,7 @@ class UserPasswordRenew extends Command
 
             $user = $row->first();
 
-            return $this->info("Password renewed successfully {$user->email}:{$user->pass}");
+            return $this->info("Password renewed successfully {$user->email}:{$user->password}");
         }
 
         $this->warn('User does not exist!');
