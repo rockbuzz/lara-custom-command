@@ -2,6 +2,7 @@
 
 namespace Rockbuzz\LaraCustomCommand\Commands;
 
+use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +13,7 @@ class UserPasswordRenew extends Command
      *
      * @var string
      */
-    protected $signature = 'user:password-renew {email} {pass}';
+    protected $signature = 'user:password-renew {email} {pass?}';
     /**
      * The console command description.
      *
@@ -32,9 +33,19 @@ class UserPasswordRenew extends Command
      */
     public function handle()
     {
-        $emai = $this->argument('emai');
+        $email = $this->argument('email');
         $pass = $this->argument('pass');
 
-        $this->info("{$email}:{$pass}");
+        $user = DB::table('users')->where('email', $email)->first();
+
+        $pass = $pass ?? Str::random(8);
+
+        if ($user) {
+            $user->update(['password' => bcrypt($pass)]);
+
+            return $this->info("Password renewed successfully {$email}:{$pass}");
+        }
+
+        $this->warn('User does not exist!');
     }
 }
