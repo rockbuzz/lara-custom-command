@@ -1,0 +1,44 @@
+{
+  "name": "rockbuzz/lara-custom-command",
+  "description": "Laravel custom command",
+  "keywords": ["laravel", "command"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "TiagoDevWeb",
+      "email": "tiago@rockbuzz.com.br"
+    },
+    {
+      "name": "Paulo Henrique P. Scheuermann",
+      "email": "paulo@rockbuzz.com.br"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Rockbuzz\\LaraCustomCommand\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^7.3"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0",
+    "squizlabs/php_codesniffer": "^3.5"
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit --testdox",
+    "cs": "vendor/bin/phpcs"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Rockbuzz\\LaraCustomCommand\\ServiceProvider"
+      ]
+    }
+  }
+}
