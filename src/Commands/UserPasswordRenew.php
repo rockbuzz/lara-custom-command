@@ -13,7 +13,7 @@ class UserPasswordRenew extends Command
      *
      * @var string
      */
-    protected $signature = 'user:password-renew {email} {pass?}';
+    protected $signature = 'user:pass {email} {pass?}';
     /**
      * The console command description.
      *
