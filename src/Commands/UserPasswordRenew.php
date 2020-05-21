@@ -34,6 +34,6 @@ class UserPasswordRenew extends Command
     {
         $pass = $this->argument('pass');
 
-        dd($pass);
+        $this->info("{$pass}");
     }
 }
