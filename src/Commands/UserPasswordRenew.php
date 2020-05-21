@@ -12,7 +12,7 @@ class UserPasswordRenew extends Command
      *
      * @var string
      */
-    protected $signature = 'user:password-renew {--pass=}';
+    protected $signature = 'user:password-renew {email} {pass}';
     /**
      * The console command description.
      *
@@ -32,8 +32,9 @@ class UserPasswordRenew extends Command
      */
     public function handle()
     {
+        $emai = $this->argument('emai');
         $pass = $this->argument('pass');
 
-        $this->info("{$pass}");
+        $this->info("{$email}:{$pass}");
     }
 }
