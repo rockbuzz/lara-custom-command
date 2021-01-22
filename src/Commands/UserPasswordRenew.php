@@ -36,10 +36,9 @@ class UserPasswordRenew extends Command
         $email = $this->argument('email');
         $pass = $this->argument('pass');
 
-        $row = DB::table('users')->where('email', $email);        
+        $row = DB::table('users')->where('email', $email);
 
         if ($row->exists()) {
-
             $pass = $pass ?? Str::random(8);
 
             $row->update(['password' => bcrypt($pass)]);

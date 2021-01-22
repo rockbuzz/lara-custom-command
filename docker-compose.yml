@@ -1,10 +1,8 @@
-version: '2'
+version: '3'
 services:
   app:
-    container_name: command
     build:
       context: .
       dockerfile: Dockerfile
-    restart: always
     volumes:
       - ./:/var/www

@@ -13,12 +13,13 @@ $ composer require rockbuzz/lara-custom-command
 ```
 
 ```php
-$php artisan cache:renew-all //app cache, route, config and view
-$php artisan db:show-tables
-$php artisan db:show-tables
-$php artisan db:describe {table_name}
-$php artisan db:import {to/path/dump.sql}
-$php artisan user:pass {email} {pass?}
+$ php artisan cache:renew-all
+$ php artisan cache:clear-all
+$ php artisan db:show-tables
+$ php artisan db:show-tables
+$ php artisan db:describe {table_name}
+$ php artisan db:import {to/path/dump.sql}
+$ php artisan user:pass {email} {pass?}
 ```
 
 ## License
