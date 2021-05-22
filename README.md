@@ -4,7 +4,7 @@ Laravel Custom Command
 
 ## Requirements
 
-PHP: >=7.1
+PHP: >=7.2
 
 ## Install
 
