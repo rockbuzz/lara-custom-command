@@ -2,8 +2,12 @@
 
 namespace Tests;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
 class DBTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @test */
     public function it_can_describe_table()
     {

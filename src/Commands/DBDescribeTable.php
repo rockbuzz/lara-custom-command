@@ -46,7 +46,7 @@ class DBDescribeTable extends Command
 
     protected function showTableDetails($table)
     {
-        $columns = \Illuminate\Support\Facades\DB::select("DESC {$table}");
+        $columns = \Illuminate\Support\Facades\DB::select("DESCRIBE {$table}");
         $headers = [
             'Field', 'Type', 'Null', 'Key', 'Default', 'Extra',
         ];
